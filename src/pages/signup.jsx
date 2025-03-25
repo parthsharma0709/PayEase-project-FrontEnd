@@ -27,6 +27,7 @@ export  function SignUp(){
                         FirstName,
                         LastName
                     })
+                    
                     alert("you have signed up successfully")
                    }
                    catch(error){

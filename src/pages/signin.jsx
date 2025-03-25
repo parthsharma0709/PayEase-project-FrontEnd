@@ -7,17 +7,20 @@ import axios from "axios";
 export  function SignIn(){
   const [username, setUserName]=useState("");
   const [password, setPassword]=useState("");
+  const [PIN , setPIN]= useState("")
     return <div className="h-screen w-screen bg-slate-600 flex justify-center items-center">
-        <div className=" flex flex-col w-[400px] h-[350px] bg-white rounded border-2">
+        <div className=" flex flex-col w-[400px] h-[450px] bg-white rounded border-2">
             <div className="text-2xl font-bold flex justify-center items-center mt-2">SignIn</div>
             <div className="flex flex-col justify-center items-center mt-2 gap-3 p-3 ">
               <InputBox onChange={(e)=>setUserName(e.target.value)} type={"text"} placeholder= {"john123"} label={"Username"}/>
              <InputBox onChange={(e)=>setPassword(e.target.value)} type={"password"} placeholder= {"john@123"} label={"Password"}/>
+             <InputBox onChange={(e)=>setPIN(e.target.value)} type={"password"} placeholder= {"1234"} label={"PIN"}/>
               <div className="w-full mt-3 " >
                 <Button bgColor="bg-black" width={"w-full"} padding={"p-3"}  text="SignIn" onClick={async()=>{
                 const response=  await axios.post("http://localhost:3000/api/v1/user/signin",{
                     username,
-                    password
+                    password,
+                    PIN
                   });
                   localStorage.setItem("token",response.data.token);
 
