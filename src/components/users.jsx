@@ -31,7 +31,7 @@ export function Users() {
           onChange={(e) => setFilter(e.target.value)}
           type={"text"}
           placeholder={"David"}
-          label={"Search a user..."}
+          label={"Search for a  Receiver..."}
         />
       </div>
 

@@ -19,7 +19,7 @@ export function SendMoney() {
         <div className="flex justify-center text-2xl font-bold items-center">Send Money</div>
         <div className="flex justify-start items-center gap-4">
           <div className="text-lg w-12 flex justify-center items-center h-12 bg-slate-400 p-3 rounded-full">
-            {name?.[0] || "?"}
+            {name?.[0].toUpperCase() || "?"}
           </div>
           <div className="text-lg font-semibold">{name || "Unknown"}</div>
         </div>

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Button } from "../components/Button";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export function PINElement() {
   const [enteredPIN, setEnteredPIN] = useState("");
-
+   const navigate= useNavigate();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const amount = searchParams.get("amount");
@@ -37,6 +37,7 @@ export function PINElement() {
           }
         );
         alert("Transaction successful");
+      navigate('/dashboard');
       } else {
         alert("Wrong PIN! Please enter a valid PIN.");
       }
