@@ -15,7 +15,7 @@ export  function SignIn(){
             <div className="flex flex-col justify-center items-center mt-2 gap-3 p-3 ">
               <InputBox onChange={(e)=>setUserName(e.target.value)} type={"text"} placeholder= {"john123"} label={"Username"}/>
              <InputBox onChange={(e)=>setPassword(e.target.value)} type={"password"} placeholder= {"john@123"} label={"Password"}/>
-             <InputBox onChange={(e)=>setPIN(e.target.value)} type={"password"} placeholder= {"1234"} label={"PIN"}/>
+             <InputBox onChange={(e)=>setPIN(e.target.value)}  maxLength={4} minLength={4} type={"password"} placeholder= {"1234"} label={"PIN"}/>
               <div className="w-full mt-3 " >
                 <Button bgColor="bg-black" width={"w-full"} padding={"p-3"}  text="SignIn" onClick={async()=>{
                try{

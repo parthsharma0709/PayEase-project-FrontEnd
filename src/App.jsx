@@ -8,6 +8,7 @@ import { PINElement } from "./pages/pin";
 import { Homepage } from "./pages/homepage";
 import { MyBalance } from "./pages/check-balance";
 import { UpdateDetails } from "./pages/update";
+import { RESETPIN } from "./pages/reset-pin";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/enterPIN" element={<PINElement/>}/>
         <Route path="/checkBalance" element={<MyBalance/>}/>
         <Route path="/updateUser" element={<UpdateDetails/>}/>
+        <Route path="/resetPIN" element={<RESETPIN/>}/>
       </Routes>
     </BrowserRouter>
   );

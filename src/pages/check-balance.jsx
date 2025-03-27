@@ -1,6 +1,7 @@
  import axios from "axios";
 import { Button } from "../components/Button";
  import { useState ,useEffect } from "react";
+import { InputBox } from "../components/input-box";
 export function MyBalance(){
      const [enteredPIN, setEnteredPIN] = useState("");
      const [balance, setBalance]=useState()
@@ -50,17 +51,10 @@ export function MyBalance(){
     return (
        <div className="h-screen w-screen bg-slate-600 flex justify-center items-center">
              <div className="flex flex-col w-[400px] gap-3 h-[300px] bg-white rounded border-2 p-3">
-               <div>Enter PIN</div>
+              
                <div className="w-full">
-                 <input
-                   onChange={(e)=>{setEnteredPIN(e.target.value)}}
-                   className="w-full p-2"
-                   type="password"
-                   maxLength="4"
-                   minLength="4"
-                   placeholder="PIN"
-                   required
-                 />
+                
+                 <InputBox type={"password"} label={"Enter PIN"} onChange={(e)=>{setEnteredPIN(e.target.value)}} maxLength={4} minLength={4} placeholder={"Enter PIN"}  />
                </div>
             {balance && <div className="pl-3 mb-2 mt-2">  Hey {name} your account balanace is : {balance} rupees</div>}
                <Button text={"Verify & Check"} hover={" hover:bg-blue-500 hover:text-black "} padding={"p-2"} bgColor="bg-black" onClick={Check}  />
