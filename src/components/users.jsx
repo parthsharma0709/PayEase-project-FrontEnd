@@ -50,7 +50,7 @@ function User({ user }) {
   return (
     <div className="flex justify-between">
       <div className="flex  justify-center items-center gap-3">
-      <div className="text-lg w-8 flex justify-center items-center h-8 bg-slate-400 p-3 rounded-full">{user.FirstName[0] }</div>
+      <div className="text-lg w-8 flex justify-center items-center h-8 bg-slate-400 p-3 rounded-full">{user.FirstName[0].toUpperCase()}</div>
          <div className="text-lg">{user.FirstName}  {user.LastName}</div>
          
         </div>

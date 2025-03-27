@@ -37,7 +37,7 @@ export function PINElement() {
           }
         );
         alert("Transaction successful");
-      navigate('/dashboard');
+         navigate('/dashboard');
       } else {
         alert("Wrong PIN! Please enter a valid PIN.");
       }
@@ -47,16 +47,38 @@ export function PINElement() {
     }
   };
 
+  
   return (
-    <div className="h-screen w-screen bg-slate-600 flex justify-center items-center">
-      <div className="flex flex-col w-[400px] gap-3 h-[200px] bg-white rounded border-2 p-3">
-       
-        <div className="w-full">
-         
-          <InputBox type={"password"} label={"Enter PIN"} onChange={(e)=>{setEnteredPIN(e.target.value)}} maxLength={4} minLength={4} placeholder={"Enter PIN"}  />
-        </div>
-        <Button text={"Verify & Pay"} padding={"p-2"} onClick={Payment} />
-      </div>
+    <div className="h-screen w-screen bg-gradient-to-br from-indigo-500 to-purple-700 flex justify-center items-center">
+  <div className="flex flex-col w-[400px] gap-6 bg-white rounded-xl shadow-2xl p-6">
+   
+    <h2 className="text-2xl font-semibold text-center text-indigo-800">
+      Verify & Pay
+    </h2>
+    
+    <div className="w-full">
+      <InputBox
+        type="password"
+        label="Enter PIN"
+        onChange={(e) => setEnteredPIN(e.target.value)}
+        maxLength={4}
+        minLength={4}
+        placeholder="Enter PIN"
+      />
     </div>
+    
+    <div className="flex justify-center">
+      <Button
+        text="Verify & Pay"
+        padding="px-6 py-3"
+        bgColor="bg-indigo-700"
+        textColor="text-white"
+        hover="hover:bg-indigo-800"
+        onClick={Payment}
+      />
+    </div>
+  </div>
+</div>
+
   );
 }

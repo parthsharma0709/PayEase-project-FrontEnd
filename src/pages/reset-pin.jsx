@@ -23,12 +23,11 @@ export function RESETPIN() {
       });
 
       const correctPIN = String(response.data.PIN);
-      
+
       if (correctPIN !== previousPIN) {
         setMessage("Previous PIN is incorrect.");
         return;
       }
-
 
       await axios.put(
         "http://localhost:3000/api/v1/user/resetPIN",
@@ -40,7 +39,7 @@ export function RESETPIN() {
         }
       );
 
-      alert("your PIN has been updated successfully")
+      alert("Your PIN has been updated successfully");
     } catch (error) {
       console.error("Error updating PIN:", error);
       setMessage("An error occurred while resetting your PIN. Please try again.");
@@ -48,9 +47,12 @@ export function RESETPIN() {
   };
 
   return (
-    <div className="h-screen w-screen bg-slate-600 flex justify-center items-center">
-      <div className="flex flex-col w-[400px] gap-3 h-[365px] bg-white rounded border-2 p-3">
-        <div className="w-full gap-3 flex flex-col">
+    <div className="h-screen w-screen bg-gradient-to-r from-blue-400 to-indigo-600 flex justify-center items-center">
+      <div className="flex flex-col w-[400px] gap-6 bg-white rounded-xl shadow-lg p-6">
+        {/* Header */}
+        <h2 className="text-2xl font-semibold text-center text-indigo-700">Reset Your PIN</h2>
+        {/* Input Fields */}
+        <div className="w-full flex flex-col gap-4">
           <InputBox
             type="password"
             label="Enter Previous PIN"
@@ -59,7 +61,6 @@ export function RESETPIN() {
             placeholder="Previous PIN"
             onChange={(e) => setPreviousPIN(e.target.value)}
           />
-          {message && <p className="text-center text-red-500">{message}</p>}
           <InputBox
             type="password"
             label="Enter New PIN"
@@ -76,10 +77,21 @@ export function RESETPIN() {
             placeholder="Confirm New PIN"
             onChange={(e) => setConfirmUpdatedPIN(e.target.value)}
           />
-          
+          {/* Error Message */}
+          {message && (
+            <p className="text-center text-red-500 font-medium">{message}</p>
+          )}
         </div>
-        <div className="flex justify-center items-center mt-3"><Button text="Reset PIN"  padding="p-2" bgColor="bg-black" onClick={resetPIN} /></div>
-        
+        {/* Button */}
+        <div className="flex justify-center">
+          <Button
+            text="Reset PIN"
+            padding="px-6 py-3"
+            bgColor="bg-indigo-700 hover:bg-indigo-800"
+            textColor="text-white"
+            onClick={resetPIN}
+          />
+        </div>
       </div>
     </div>
   );
