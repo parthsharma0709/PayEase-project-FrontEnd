@@ -49,9 +49,9 @@ export function RESETPIN() {
   return (
     <div className="h-screen w-screen bg-gradient-to-r from-blue-400 to-indigo-600 flex justify-center items-center">
       <div className="flex flex-col w-[400px] gap-6 bg-white rounded-xl shadow-lg p-6">
-        {/* Header */}
+       
         <h2 className="text-2xl font-semibold text-center text-indigo-700">Reset Your PIN</h2>
-        {/* Input Fields */}
+       
         <div className="w-full flex flex-col gap-4">
           <InputBox
             type="password"
@@ -77,12 +77,12 @@ export function RESETPIN() {
             placeholder="Confirm New PIN"
             onChange={(e) => setConfirmUpdatedPIN(e.target.value)}
           />
-          {/* Error Message */}
+         
           {message && (
             <p className="text-center text-red-500 font-medium">{message}</p>
           )}
         </div>
-        {/* Button */}
+      
         <div className="flex justify-center">
           <Button
             text="Reset PIN"

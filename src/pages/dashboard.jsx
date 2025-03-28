@@ -33,17 +33,14 @@ export function DashBoard() {
         </p>
       </div>
 
-      {/* Static Balance Component */}
+     
       <div className="p-4 bg-white shadow-md rounded-lg mx-6 mb-4 sticky top-0 z-10">
         <Balance />
       </div>
 
-      {/* Scrollable Users Section */}
+    
       <div className="flex-1 px-6 overflow-y-auto">
         <div className="w-full bg-white rounded-lg border shadow-md p-4 max-h-[500px] overflow-y-auto">
-          
-
-          {/* Users Component */}
           <Users />
         </div>
       </div>

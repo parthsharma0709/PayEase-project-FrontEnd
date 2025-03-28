@@ -13,17 +13,17 @@ export function PINElement() {
 
   const Payment = async () => {
     try {
-      // Fetch PIN from the server
+     
       const response = await axios.get("http://localhost:3000/api/v1/user/getPIN", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
       });
 
-      const correctPIN = String(response.data.PIN); // Convert to string for comparison
+      const correctPIN = String(response.data.PIN); 
 
       if (enteredPIN === correctPIN) {
-        // If PIN matches, proceed with the transaction
+      
         await axios.post(
           "http://localhost:3000/api/v1/user/moneyTransfer",
           {
